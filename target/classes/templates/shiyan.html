@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <input v-model="name">
+    {{name}}
+
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            name:1
+        }
+    })
+</script>
+</body>
+</html>

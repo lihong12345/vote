@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><!--要用th必须加-->
+<head>
+    <meta charset="UTF-8">
+    <title th:text="ti">Title</title><!--th:text=""  ""的数据会把标签里的内容覆盖掉-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+
+<!--    <link href="@{css/1.css}">&lt;!&ndash;引入外部文件&ndash;&gt;-->
+</head>
+<body>
+<input type="file" name="img" id="selectImg">
+<!--注意这里我们不用表单来提交图片，而是用ajax来提交图片，因为我们要在当前页面演示提交的结果-->
+<!--第一步，加入thymeleaf命名空间 ，并引入jquery库-->
+<!--第二步，给我讲选择框添加/绑定 改变事件-->
+<!--第三步，如何获取用户到用户选择的文件formData.append('img',$("#selectImg")[0].files)，并如何提交-->
+
+
+
+
+<!--<sapn class="red" th:text="${ti}">asdad</sapn>-->
+<div id="app" th:each="stat:${ti}">
+
+<!--    <button th:text="${stat.zhan}"  @click="hh($event)" th:id="${stat.id}"></button>-->
+<!--    <button th:text="${stat.zhan}"  @click="h1()" th:value="${stat.id}"></button>-->
+<!--    <button th:text="${stat.zhan}"  @click="hh($event)" th:id="2"></button>-->
+<!--    <input type="text" th:value="${stat.id}">-->
+
+    <img th:src="@{'/upload/'+${stat.img_addr}}"class="work" th:id="${stat.id}" width="200px">
+<p th:text="${stat.user.nickname}"></p>
+    <p  th:text="${stat.num}"></p>
+</div>
+<!--<img src="/1.jpg" width="200px">-->
+<!--<tr th:each="emp : ${ti}">-->
+<!--    <img th:src="@{ti.img_addr}">-->
+<!--</tr>-->
+<script>
+    $("#selectImg").change(function () {
+        //得到我们用户选择的图片
+var formData=new FormData();//FormData是用来装表单数据的
+formData.append('file',$("#selectImg")[0].files[0]);
+var config={/*配置信息*/
+    "url":"/login/upload",
+    "type":"post",
+    "processData":false,//将数据转换成对象，不对数据做处理，故processData：false
+    "contentType":false,//不设置数据类型
+    data:formData,
+    success:function (re) {//成功了返回
+console.log(re)
+        // setTimeout(function () {
+        //     console.log("asd");
+        //     location.reload();
+        // },3000);
+    }
+
+};
+        $.ajax(config)
+    });
+    $(".work").click(function () {
+        //拿到图片的id
+        //使用ajax发送投票请求，并显示投票结果
+        $.post("/vote/byid",{id:$(this).attr("id")},function (re) {//{}里是发送的数据  function是把请求结果返回到re
+            console.log(re);
+
+        })
+        console.log($(this).attr("id"));//获取属性值
+
+    });
+    // new Vue({
+    //     el:"#app",
+    //     data:{t:0}
+    //     ,
+    //     methods:{
+    //         h1:function(){
+    //             console.log(1)
+    //         },
+    //
+    //         hh:function (d) {
+    //             axios.get('http://localhost:8080/ax1', {
+    //                 params: {
+    //                     ID: d.currentTarget.value
+    //                 }
+    //             })
+    //                 .then(function (response) {
+    //                     console.log(response);
+    //                 })
+    //                 .catch(function (error) {
+    //                     console.log(error);
+    //                 });
+    //
+    //         }
+    //
+    //     }
+    // })
+
+
+</script>
+</body>
+</html>

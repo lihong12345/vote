@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css}"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 2 3Template</title>
+
+  <!-- Bootstrap -->
+
+<!--  <link th:href="css/bootstrap.css" rel="stylesheet">-->
+  <style type="text/css">
+    /*.one{*/
+    /*  width: 550px;*/
+    /*  height: 450px;*/
+    /*  margin: 100px auto;*/
+
+    /*  background-image: url(../static/1.jpg) ;*/
+    /*  background-size: cover;*/
+    /*  background-position:-110px 0px ;*/
+
+    /*  overflow: hidden;*/
+    /*}*/
+
+    /*.one11{*/
+    /*  width: 300px;*/
+	/*  margin-right:4px ;*/
+
+    /*}*/
+    /*.one1{*/
+    /*  font-size: 35px;*/
+    /*  margin-top: 55px;*/
+    /*  margin-left: 140px;*/
+    /*  color: #AFD9EE;*/
+
+    /*}*/
+    /*.f1 {*/
+
+    /*  margin-top: 40px;*/
+    /*}*/
+    /*.f2{*/
+    /*  margin-top:10px;    }*/
+
+
+    /*.f{*/
+    /*  width: 400px;*/
+    /*  height: 63px;*/
+    /*  font-size:28px;*/
+    /*  margin-left:80px;*/
+
+    /*}*/
+
+    /*.form-horizontal .form-group {*/
+    /*  margin-right: -15px;*/
+    /*  margin-left: 70px;*/
+    /*}*/
+
+    /*.form-group {*/
+    /*  margin-bottom: 25px;*/
+    /*}*/
+    /*form {*/
+    /*  display: block;*/
+    /*  margin-top: 35px;*/
+    /*}*/
+    /*.one13{*/
+    /*  width: 100px;*/
+    /*  height: 50px;*/
+
+    /*  margin:40px 155px;*/
+    /*}*/
+    /*label{*/
+    /*  color: #AFD9EE;*/
+    /*}*/
+    /*body{
+        background-image:url(bg%20-%20副本%20(26).png) no-repeat;
+    }*/
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1 style="text-align: center">登录</h1>
+  <form action="/login/v1/page_user1" class="form-horizontal">
+    <div class="form-group row">
+      <div class="col-md-1 col-md-offset-3"><label class="control-label" for="email">邮箱</label></div>
+      <div class="col-md-5"><input type="text"class="form-control" id="email"name="email" placeholder="邮箱"></div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-1 col-md-offset-3"><label class="control-label" for="pwd">密码</label></div>
+      <div class="col-md-5"><input type="text"class="form-control" id="pwd"name="pwd" placeholder="邮箱"></div>
+    </div>
+    <button type="submit" class="btn btn-default center-block">登录</button>
+    <a href="/login/z1">注册</a>
+  </form>
+<!--  <div class="one1" id="a1">-->
+<!--    账户登录-->
+<!--  </div>-->
+<!--  <form action="/login/v1/page_user1" class="form-horizontal">-->
+<!--    <div class="form-group row">-->
+<!--      <label  class="col-sm-2 control-label">账户</label>-->
+<!--      <div class="col-sm-10">-->
+<!--        <input type="text" name="zhanghu" class="form-control one11" id="2">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label class="col-sm-2 control-label">密码</label>-->
+<!--      <div class="col-sm-10">-->
+<!--        <input type="password" name="mima" class="form-control one11" id="3">-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+
+<!--    <button type="submit" onclick="login()" id="4" class="btn btn-default btn-lg active one13">登录</button>-->
+<!--  </form>-->
+
+</div>
+<script type="text/javascript">
+  /*var a=document.getElementById("a1")//通过id获取
+  var b=document.getElementsByClassName("one1")//通过类名获取//以下获取的元素都是保存在数组中用下标b[下标]获取元素;
+  var c=document.getElementsByTagName("input")//通过标签名获取
+  var e=document.getElementsByName("")//通过name属性获取
+  var f=document.querySelector('one1')//获取符合条件的第一个元素
+  var g=document.querySelectorAll("one1")//获取符合条件的所有元素
+  console.log(c[0]);
+  document.title//获取页面的title
+  document.body*///获取body
+  function login(){
+    //获取元素的属性的值  元素.属性
+    var jj=document.querySelectorAll('input');
+    console.log(jj[0].value);
+    if(jj[0].value==''){
+      jj[0].style.borderColor="red"
+      /*alert("账户为空请输入");*/
+    }else{
+      jj[0].style.borderColor=""
+    }
+  }
+  //修改元素样式   获取的元素.style.需要修改的样式="值"
+
+
+
+</script>
+
+</body>
+</html>

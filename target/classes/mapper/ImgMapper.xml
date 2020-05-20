@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--命名空间的含义:将当前的xml文件和com.cqeec.vote.mapper.ImgMapper关联起来-->
+<mapper namespace="com.cqeec.vote.mapper.ImgMapper">
+    <!--实体类与数据库字段不同 需要映射-->
+    <resultMap id="Img" type="img">
+        <id property="id" column="id"/><!--映射主键 column是数据库字段-->
+        <result property="" column=""/>
+    </resultMap>
+    <!--sql语句的id必须和接口方法相同
+         把查询结果放到Img里-->
+    <select id="ff" resultType="Img">
+        SELECT * FROM img
+    </select>
+
+</mapper>
